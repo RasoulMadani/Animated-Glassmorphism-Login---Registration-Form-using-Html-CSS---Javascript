@@ -34,6 +34,40 @@
                     <input type="submit" value="Sign in" placeholder="Sign in" id="">
                 </div>
             </form>
+
+            <form action="" id="signupForm">
+                <h2>Registration</h2>
+                <div class="inputBox">
+                    <input type="text" placeholder="Username" id="">
+                </div>
+                <div class="inputBox">
+                    <input type="email" placeholder="Email Address" id="">
+                </div>
+                <div class="inputBox">
+                    <input type="password" placeholder="Create Password" id="">
+                </div>
+                <div class="inputBox">
+                    <input type="password" placeholder="Confirm Password" id="">
+                </div>
+ 
+                <div class="inputBox ">
+                    <input type="submit" value="Register Account" placeholder="" id="">
+                </div>              
+                <div class="inputBox group">
+                    <a href="#">Already Have an Account ? <b id="signin">Login</b></a>
+                </div>
+            </form>
         </div>
+        <script>
+            let signup = document.querySelector('#signup');
+            let signin = document.querySelector('#signin');
+            let body = document.querySelector('body');
+            signup.onclick = ()=>{
+                body.classList.add('signup');
+            }
+            signin.onclick = ()=>{
+                body.classList.remove('signup');
+            }
+        </script>
     </body>
 </html>

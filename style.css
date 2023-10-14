@@ -19,6 +19,17 @@ body {
     background-size: cover;
     background-position: center;
   }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(./ghasem2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: 0.5s;
+  }
   .container {
     position: relative;
     width: 350px;
@@ -98,34 +109,83 @@ body {
         width: 70%;
         display: flex;
         justify-content: space-between;
-        >a{
-            color: white;
-            text-decoration: none;
-            font-size: 0.85em; 
-            &:nth-child(2){
-                text-decoration: underline;
-            }
+        > a {
+          color: white;
+          text-decoration: none;
+          font-size: 0.85em;
+          &:nth-child(2) {
+            text-decoration: underline;
+          }
         }
-        >input{
-            width: 100%;
-            outline: none;
-            border: 1px solid rgba(255,255,255,0.25);
-            background: rgba(0,0,0,0.15);
-            padding: 6px 15px;
-            border-radius: 4px;
-            font-size: 0.85em;
-            color: white;
-            &::placeholder{
-                color: rgba(255,255,255,0.5);
-            }
-            &[type='submit']{
-                background: #2196f3;
-                font-weight: 500;
-                cursor: pointer;
-            }
-
+        > input {
+          width: 100%;
+          outline: none;
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          background: rgba(0, 0, 0, 0.15);
+          padding: 6px 15px;
+          border-radius: 4px;
+          font-size: 0.85em;
+          color: white;
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+          }
+          &[type="submit"] {
+            background: #2196f3;
+            font-weight: 500;
+            cursor: pointer;
+          }
         }
       }
+    }
+    >form#signupForm{
+        left: 100%;
+    }
+  }
+}
+body.signup {
+  &::after {
+    opacity: 1;
+  }
+  .container {
+    height: 440px;
+    &::before{
+        filter: hue-rotate(297deg);
+    }
+    >span{
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 5px;
+            background: url(./ghasem2.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px);
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            inset: 5px;
+            background: url(./ghasem2.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            filter: blur(15px);
+          }
+    }
+    >form#signinForm{
+        left: -100%;
+    }
+    >form#signupForm{
+        left: 0;
+        >.inputBox input[type="submit"]{
+            background: #f4242f;
+        }
+        #signin{
+            font-weight: 500;
+            color: #ffeb3b;
+            text-decoration: underline;
+        }
     }
   }
 }
